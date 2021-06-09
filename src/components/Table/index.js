@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Table, Image } from 'semantic-ui-react';
+import { Table, Image, Label } from 'semantic-ui-react';
 // *TODO: import { Icon, Menu } from 'semantic-ui-react';
 
 //credit: Semantic UI
@@ -21,7 +21,8 @@ const TableTemplate = (props) => (
         {props.employees.map((employee) => (
             <Table.Row>
                 <Table.Cell>
-                    <Image src={employee.picture.thumbnail}/>
+                    <Image src={employee.picture.thumbnail} />
+                    <Label ribbon>{employee.registered.age} yrs </Label>
                 </Table.Cell>
                 <Table.Cell>{employee.name.first}</Table.Cell>
                 <Table.Cell>{employee.name.last}</Table.Cell>
