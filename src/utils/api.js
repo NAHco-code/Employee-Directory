@@ -8,7 +8,7 @@ const API = {
     // }
 
     //*ES6 shorthand
-    getUserData() {
+    getEmpData() {
         return fetch('https://randomuser.me/api/?results=100');
     }
 
