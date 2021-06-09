@@ -1,27 +1,41 @@
 
-// import React from 'react';
-// import { Table } from 'semantic-ui-react';
-// import 'semantic-ui-css/semantic.min.css';
-// import CardTemplate from '../Card';
+import React from 'react';
+import { Table, Image } from 'semantic-ui-react';
+// *TODO: import { Icon, Menu } from 'semantic-ui-react';
 
-// // *TODO: import { Icon, Menu } from 'semantic-ui-react';
+//credit: Semantic UI
+const TableTemplate = (props) => (
 
-// //credit: Semantic UI
-// const TableTemplate = (props) => (
-//     // const { data.results } =
+    <>
+    <Table celled>
+        <Table.Header>
+            <Table.Row>
+                <Table.HeaderCell>#</Table.HeaderCell>
+                <Table.HeaderCell>First Name</Table.HeaderCell>
+                <Table.HeaderCell>Last Name</Table.HeaderCell>
+                <Table.HeaderCell>Email</Table.HeaderCell>
+            </Table.Row>
+        </Table.Header>
 
-//     <Table celled>
-//         <Table.Body>
-//             {/* <Table.Row> */}
-//                 {/* //for loop to render 3-4 employees on a row then go to the next line */}
-//             <Table.Cell>{props.children}</Table.Cell>
-//             {/* </Table.Row> */}
-//         </Table.Body>
-//     </Table>
-// );
+        <Table.Body>
+        {props.employees.map((employee) => (
+            <Table.Row>
+                <Table.Cell>
+                    <Image src={employee.picture.thumbnail}/>
+                </Table.Cell>
+                <Table.Cell>{employee.name.first}</Table.Cell>
+                <Table.Cell>{employee.name.last}</Table.Cell>
+                <Table.Cell>{employee.email}</Table.Cell>
+            </Table.Row>
+        ))}
+        </Table.Body>
+    </Table>
+    </>
 
-// export default TableTemplate;
+);
 
-// //TODO: install package and import css
-// //TODO: header component
-// //TODO: search form component
+export default TableTemplate;
+
+//TODO: install package and import css
+//TODO: header component
+//TODO: search form component

@@ -1,9 +1,11 @@
 
 import { Component } from 'react';
 import './App.css';
-import API from './utils/api';
-import CardTemplate from './components/Card';
 import DirectoryHeader from './components/Header';
+// import SearchBar from './components/SearchBar';
+import TableTemplate from './components/Table';
+// import Footer from './components/Footer';
+import API from './utils/api';
 import 'semantic-ui-css/semantic.min.css';
 
 class App extends Component {
@@ -15,34 +17,25 @@ class App extends Component {
     super();
     this.state = {
       employees: [],
-
+      input: ""
     }
   };
-
   componentDidMount() {
     this.handleAPIcall();
   };
-
-  //TODO: how do I populate the table with the API response?
   handleAPIcall = () => {
-    API.getUsers() //fetch returns a promise
+    API.getUserData() //fetch returns a promise
       .then(res => res.json())
       .then(data => this.setState({ employees: data.results }));
-    return; //?
   };
 
   render() {
     return (
       <div className="App">
         <DirectoryHeader />
-        {this.state.employees.map(employee => (
-          <CardTemplate
-            id={employee.login.username}
-            key={employee.login.uuid}
-            name={employee.name}
-            image={employee.picture.thumbnail}
-          />
-        ))}
+        {/* <SearchBar /> */}
+        <TableTemplate employees={this.state.employees}/>
+        {/* <Footer /> */}
       </div>
     );
   }
