@@ -1,7 +1,6 @@
 
 import { Component } from 'react';
 import './App.css';
-import DirectoryHeader from './components/Header';
 import SearchForm from './components/SearchBar';
 import TableTemplate from './components/Table';
 // import Footer from './components/Footer';
@@ -12,13 +11,12 @@ class App extends Component {
 
   // *NOTE: shorthand
   //state = {} //lose functionality - can't do binding
-
   constructor(props) {
     super();
     this.state = {
       employees: [],
       input: '',
-      sorted: []
+      filteredEmps: []
     }
   };
   componentDidMount() {
@@ -27,40 +25,66 @@ class App extends Component {
   handleAPIcall = () => {
     API.getEmpData() //fetch returns a promise
       .then(res => res.json())
-      .then(data => this.setState({ employees: data.results }));
+      .then(data => this.setState({ employees: data.results, filteredEmps: data.results })); //keep copy of original unfiltered array
   };
-  //function to filter users
-    //how many years they've been at company
+
     //first name asc + desc
     //last name asc + desc
+    //where to sort?
 
-  //****** CHECK / REVIEW ******/
-  handleFilteredSearch = (userInputEvent) => {
+  handleEmpSearch = (userInputEvent) => {
     let value = userInputEvent.target.value;
-    this.setState({ input: value })
-  };
-  searchbyFirst = (userInputEvent) => {
-    userInputEvent.preventDefault();
+    const name = userInputEvent.target.name;
 
-    let filteredEmps = [];
-    let employees = this.state.results;
-    for (let i = 0; i < employees.length; i++) {
-      if ((employees[i].name.first.toLocaleLowerCase() === this.state.input.toLocaleLowerCase()) || (employees[i].name.last.toLocaleLowerCase() === this.state.search.toLocaleLowerCase())) {
-        filteredEmps.push(employees[i])
-      }
-    }
     this.setState({
-      employees: filteredEmps
+      [name]: value
+    });
+  };
+  searchEmployees = () => {
+    let filteredEmps = this.state.filteredEmps.filter((employee) => {
+      return (
+        employee.name.first.toLocaleLowerCase().includes(this.state.input.toLocaleLowerCase()) ||
+        employee.name.last.toLocaleLowerCase().includes(this.state.input.toLocaleLowerCase()) ||
+        employee.email.toLocaleLowerCase().includes(this.state.input.toLocaleLowerCase())
+      )
+    })
+    return filteredEmps;
+  };
+
+  //sort ascending comparison function for strings
+  //TODO: new state - compare asc + desc
+  compare = (a, b) => {
+    if (a.name.last < b.name.last) {
+      return -1;
+    }
+    if (a.name.last > b.name.last) {
+      return 1;
+    }
+    // a must be equal to b
+    return 0;
+  }
+  sortLast = () => {
+    let sortedEmps = this.state.filteredEmps
+    sortedEmps.sort(this.compare);
+
+    this.setState({ filteredEmps: sortedEmps });
+  };
+
+  //live page update
+  handlePageUpdate = (updateEvent) => {
+    // updateEvent.preventDefault();
+    const value = updateEvent.target.value;
+    this.setState({ input: value }, () => {
+      this.searchEmployees();
     })
   }
-  //****** CHECK / REVIEW ******/
+
 
   render() {
     return (
       <div className="App">
-        <DirectoryHeader />
-        <SearchForm />
-        <TableTemplate employees={this.state.employees}/>
+        <SearchForm handleEmpSearch={this.handleEmpSearch}/>
+        <TableTemplate employees={this.searchEmployees()} sortLast={this.sortLast}/>
         {/* <Footer /> */}
       </div>
     );

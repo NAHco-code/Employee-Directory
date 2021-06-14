@@ -1,0 +1,14 @@
+.background-color {
+    background-color: transparent !important;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.label-font {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1em !important;
+    font-weight: 300 !important;
+    text-transform: uppercase !important;
+}
