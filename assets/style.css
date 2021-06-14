@@ -1,0 +1,13 @@
+.pusher {
+    background-color: rgba(21, 104, 105, 0.61);
+}
+.header-padding {
+    padding: 20px;
+}
+.header-background {
+    background-color: black !important;
+}
+.header-font {
+    font-size: 3em !important;
+    font-weight: 300 !important;
+}
