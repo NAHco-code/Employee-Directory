@@ -25,9 +25,9 @@ React app allows user to view their entire employee directory at once for quick 
 
 ## Visuals
 
-![screenshot](./public/assets/images/employee-directory.png)
+![screenshot](./images/employee-directory.PNG)
 
-[GithubPages](https://nahco-code.github.io/Employee-Directory/)
+[GithubPages_Deployment](https://nahco-code.github.io/Employee-Directory/)
 
 ## Contributions
 
