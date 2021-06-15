@@ -2,33 +2,32 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)
 
-Blurb.
+React app allows user to view their entire employee directory at once for quick access to their information.
 
 ## Table of Contents
 
 - [Description](#description)
-- [Visuals](#visuals)
 - [Technologies](#technologies)
+- [Visuals](#visuals)
 - [Contributions](#contributions)
 - [Contact Me](#questions)
 - [License](#license)
 
 ## Description
 
-Description.
-
-## Visuals
-
-![screenshot]()
-
-[GithubPages]()
+React app allows user to view their entire employee directory at once for quick access to their information. User is able to search by employee name and recieve live filtered results, as well as sort employee last names in ascending alphebetcial order.
 
 ## Technologies
 
--
--
--
--
+- React
+- Random User API
+- Semantic UI React
+
+## Visuals
+
+![screenshot](./public/assets/images/employee-directory.png)
+
+[GithubPages](https://nahco-code.github.io/Employee-Directory/)
 
 ## Contributions
 
