@@ -9,7 +9,7 @@ React app allows user to view their entire employee directory at once for quick 
 - [Description](#description)
 - [Technologies](#technologies)
 - [Visuals](#visuals)
-- [Contributions](#contributions)
+- [Contributing](#contributing)
 - [Contact Me](#questions)
 - [License](#license)
 
@@ -27,9 +27,9 @@ React app allows user to view their entire employee directory at once for quick 
 
 ![screenshot](./images/employee-directory.PNG)
 
-[GithubPages_Deployment](https://nahco-code.github.io/Employee-Directory/)
+Deployed: [Github Pages](https://kathrynwilkinson.github.io/Employee-Directory/)
 
-## Contributions
+## Contributing
 
 Sole Author: k.wilkinson
 
@@ -41,7 +41,7 @@ This project was completed as an individual assignment for The Ohio State Univer
 
 Please feel free to contact with any questions via email or LinkedIn.
 
-- Github: [NAHco-code](https://github.com/NAHco-code)
+- Github: [kathrynwilkinson](https://github.com/kathrynwilkinson)
 - LinkedIn: [kwilkinsonxx](https://www.linkedin.com/in/kwilkinsonxx/)
 - Email: [kathrynxwilk@gmail.com](kathrynxwilk@gmail.com)
 
