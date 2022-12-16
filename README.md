@@ -15,7 +15,7 @@ React app allows user to view their entire employee directory at once for quick 
 
 ## Description
 
-React app allows user to view their entire employee directory at once for quick access to their information. User is able to search by employee name and recieve live filtered results, as well as sort employee last names in ascending alphebetcial order.
+React app allows user to view their entire employee directory at once for quick access to their information. User is able to search by employee name and receive live filtered results, and sort employee last names in ascending alphebetcial order.
 
 ## Technologies
 
@@ -23,15 +23,19 @@ React app allows user to view their entire employee directory at once for quick 
 - Random User API
 - Semantic UI React
 
+## Local Installation
+
+clone repo, open in terminal, run npm install to update dependencies, run npm start to start development server
+
 ## Visuals
 
 ![screenshot](./images/employee-directory.PNG)
 
-Deployed: [Github Pages](https://kathrynwilkinson.github.io/Employee-Directory/)
+Deployed on [Github Pages](https://kathrynwilkinson.github.io/Employee-Directory/)
 
 ## Contributing
 
-Sole Author: k.wilkinson
+Sole Contributor: k.wilkinson
 
 This project was completed as an individual assignment for The Ohio State University Coding Boot Camp.
 
