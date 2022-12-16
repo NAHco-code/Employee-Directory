@@ -1,6 +1,6 @@
-
-import { Component } from 'react';
 import './App.css';
+import { Component } from 'react';
+
 import SearchForm from './components/SearchBar';
 import TableTemplate from './components/Table';
 // import Footer from './components/Footer';
